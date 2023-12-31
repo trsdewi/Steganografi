@@ -1,1 +1,24 @@
+Implementasi Steganografi dilakukan pada modul bpcs.py
+Modul terdiri dari berbagai fungsi yang digunakan untuk memproses gambar dalam bentuk numpy array, mengelola bitplane, membuat dan mengonversi blok data, serta melakukan operasi operasi khusus seperti enkripsi dan dekripsi menggunakan algoritma BPCS (Bit-Plane Complexity Segmentation).
 
+Berikut adalah penjelasan singkat dari beberapa fungsi kunci dalam modul bpcs.py tersebut:
+
+ 1. read_image_as_numpy: Fungsi ini digunakan untuk membaca gambar dari path yang diberikan, kemudian mengonversinya ke dalam bentuk numpy array.
+
+ 2. read_message_as_numpy: Membaca pesan rahasia dari file teks yang diberikan, mengonversi pesan tersebut menjadi array numpy, dan menyiapkan pesan dengan padding sesuai dengan ukuran blok tertentu yang akan digunakan dalam proses penyisipan.
+
+ 3. to_binary dan to_image: Fungsi-fungsi ini mengubah gambar ke format biner dan sebaliknya, memungkinkan operasi-operasi di level bitplane.
+
+ 4. conjugation_map: Membuat peta konjugasi yang akan digunakan dalam proses enkripsi BPCS.
+
+ 5. secret_blocks: Membuat blok rahasia yang akan disisipkan ke dalam gambar, serta mempersiapkan peta konjugasi yang sesuai.
+
+ 6. encode dan decode: Fungsi-fungsi ini mengimplementasikan proses enkripsi dan dekripsi menggunakan algoritma BPCS untuk menyembunyikan pesan rahasia dalam gambar dan mengekstraksinya kembali.
+
+ 7. complexity: Menghitung kompleksitas dari bitplane untuk menentukan blok mana yang cocok untuk disisipkan pesan rahasia.
+
+ 8. complication: Melakukan operasi komplikasi pada blok-blok yang akan disisipkan pesan rahasia.
+
+ 9. pbc_to_cgc dan cgc_to_pbc: Fungsi-fungsi ini melakukan transformasi dari Plain Binary Complexity (PBC) ke Complex Gray Coding (CGC) dan sebaliknya, yang merupakan teknik konversi antar representasi bitplane.
+
+Dengan fungsi-fungsi ini, algoritma BPCS dapat diterapkan untuk menyembunyikan informasi rahasia dalam gambar dengan menggunakan strategi penentuan blok yang memiliki kompleksitas bitplane yang tepat.
