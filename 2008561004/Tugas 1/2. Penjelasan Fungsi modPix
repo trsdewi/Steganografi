@@ -1,0 +1,25 @@
+Fungsi modPix adalah bagian dari sebuah program Python yang menggunakan steganografi untuk menyembunyikan pesan dalam citra (gambar) JPEG. 
+Fungsi ini bertanggung jawab untuk memodifikasi bit dari piksel-piksel dalam citra tersebut agar dapat menyisipkan data pesan ke dalam gambar tanpa mengubah secara signifikan tampilan visual dari gambar tersebut.
+
+Tujuan Utama:
+  - Menyisipkan pesan ke dalam gambar dengan memodifikasi nilai piksel agar sesuai dengan bit pesan yang ingin disisipkan.
+Parameter:
+ - pix: Merupakan piksel-piksel dari gambar yang telah diambil.
+ - data: Data pesan yang ingin disisipkan ke dalam gambar.
+ 
+Langkah-langkah utama yang dilakukan oleh fungsi ini:
+ 1. genData(data): Fungsi ini mengubah data teks pesan menjadi representasi biner dengan panjang bit yang tepat.
+ 2. Iterasi melalui Piksel Gambar:
+ Melalui loop for i in range(lendata), di mana lendata adalah panjang data yang ingin disisipkan.
+ Untuk setiap iterasi, pix diisi dengan nilai-nilai dari tiga piksel sekaligus (masing-masing dengan tiga nilai RGB).
+ 3. Pengubahan Bit Piksel:
+ Loop for j in range(0, 8) digunakan untuk memproses masing-masing bit dari pesan yang ingin disisipkan. 
+ Jika nilai bit pesan adalah '0' dan nilai piksel tidak genap (pix[j] % 2 != 0), maka nilai piksel dikurangi 1 agar menjadi genap.
+ Jika nilai bit pesan adalah '1' dan nilai piksel genap (pix[j] % 2 == 0), maka nilai piksel dikurangi 1 (kecuali jika nilai piksel sudah 0, maka ditambah 1) agar bit terakhir menjadi 1.
+ 4. Penanganan Bit Terakhir:
+ Terakhir, jika sudah mencapai bit terakhir pesan:
+ Jika bit terakhir pesan adalah '0' dan nilai piksel terakhir genap, maka nilai piksel terakhir dikurangi 1 agar menjadi ganjil.
+ Jika bit terakhir pesan adalah '1' dan nilai piksel terakhir ganjil, maka nilai piksel terakhir dikurangi 1 agar menjadi genap.
+ 5. Return Nilai Piksel:
+ Setelah semua proses modifikasi, piksel yang telah dimodifikasi dikembalikan sebagai keluaran fungsi modPix.
+ Fungsi ini bertujuan untuk memodifikasi nilai-nilai piksel dalam citra agar dapat menyembunyikan informasi dari pesan ke dalam gambar tersebut dengan memanfaatkan bit yang tidak signifikan secara visual.
